@@ -147,7 +147,7 @@ public class ExternalConfigLoaderTest {
 
     public static String createExternalSecret(final String value) {
         try {
-            final File file = File.createTempFile("externalPaxJdbcConfig-", ".secret");
+            final File file = Files.createTempFile("externalPaxJdbcConfig-", ".secret").toFile();
             file.deleteOnExit();
 
             LOG.info("CREATED SECRET: {}", file.getAbsolutePath());
